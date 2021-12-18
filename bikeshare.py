@@ -176,7 +176,7 @@ def user_stats(df, city):
     print('-'*40)
 
 
-def data_display(df):
+def display_data(df):
     # Prompt user whether the user wants to the raw data of the city to be displayed in chunks of five rows until no more
     # data available for dispaly
     print("\nRaw data is available in chunks of fives(5) rows")
@@ -204,7 +204,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df, city)
-        data_display(df)
+        display_data(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
