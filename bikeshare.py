@@ -15,7 +15,7 @@ def check_user_value(value_str, value_int):
         value_int int: tracking int
 
     Returns:
-        str: valid lower case 
+        str: valid lower case
     """
     while True:
         value_entered = input(value_str).lower()
@@ -146,10 +146,13 @@ def trip_duration_stats(df):
     start_time = time.time()
 
     # TO DO: display total travel time
-    print("The total travel time is: ", (df['Trip Duration'].sum()).round())
+    print("The total travel time is: {}".format(
+        df['Trip Duration'].sum()).round())
 
     # TO DO: display mean travel time
-    print("The mean travel time is: ", (df['Trip Duration'].mean()).round())
+
+    print("The mean travel time is: {}".format(
+        df['Trip Duration'].mean()).round())
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -162,18 +165,23 @@ def user_stats(df, city):
     start_time = time.time()
 
     # TO DO: Display counts of user types
-    print("Total user types is: ", (df['User Type'].value_counts().to_frame()))
+   print("Total user types is: {}".format(
+        df['User Type'].value_counts().to_frame()))
 
-    # TO DO: Display counts of gender
-    if city != 'washington':
-        print("Total counts of gender is: ",
-              (df['Gender'].value_counts().to_frame()))
-        # TO DO: Display earliest, most recent, and most common year of birth
-        print("The earliest year of birth is: ", int(df['Birth Year'].min()))
-        print("The most recent year of bith is: ", int(df['Birth Year'].max()))
-        print("the most occuring year of bith is: ",
-              int(df['Birth Year'].mode()[0]))
-    else:
+   # TO DO: Display counts of gender
+   if city != 'washington':
+   print("Total counts of gender is: {}".format(
+        df['Gender'].value_counts().to_frame()))
+
+   # TO DO: Display earliest, most recent, and most common year of birth
+   print("The earliest year of birth is: {}".format(
+        int(df['Birth Year'].min())))
+    print("The most recent year of bith is: {}".format(
+        int(df['Birth Year'].max())))
+    print("the most occuring year of bith is: {}".format(
+        int(df['Birth Year'].mode()[0])))
+
+   else:
         print("No gendery data for this city")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
