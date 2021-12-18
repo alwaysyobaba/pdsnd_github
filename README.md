@@ -13,5 +13,5 @@ Run and analyse statistics on bike sharing data pools
 * washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Thanks Udacity for this challenging and rewarding project.
 
