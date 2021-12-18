@@ -181,6 +181,8 @@ def user_stats(df, city):
 
 
 def data_display(df):
+    """Displays raw data in chunks """
+
     # Prompt user whether the user wants to the raw data of the city to be displayed in chunks of five rows until no more
     # data available for dispaly
     print("\nRaw data is available in chunks of fives(5) rows")
