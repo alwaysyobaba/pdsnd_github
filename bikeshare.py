@@ -15,7 +15,7 @@ def check_user_value(value_str, value_int):
         value_int int: tracking int
 
     Returns:
-        str: valid lower case
+        str: valid lower case 
     """
     while True:
         value_entered = input(value_str).lower()
@@ -150,7 +150,6 @@ def trip_duration_stats(df):
         df['Trip Duration'].sum()).round())
 
     # TO DO: display mean travel time
-
     print("The mean travel time is: {}".format(
         df['Trip Duration'].mean()).round())
 
@@ -165,28 +164,31 @@ def user_stats(df, city):
     start_time = time.time()
 
     # TO DO: Display counts of user types
-   print("Total user types is: {}".format(
+    print("Total user types is: {}".format(
         df['User Type'].value_counts().to_frame()))
 
-   # TO DO: Display counts of gender
-   if city != 'washington':
-   print("Total counts of gender is: {}".format(
-        df['Gender'].value_counts().to_frame()))
+    # TO DO: Display counts of gender
+    if city != 'washington':
 
-   # TO DO: Display earliest, most recent, and most common year of birth
-   print("The earliest year of birth is: {}".format(
-        int(df['Birth Year'].min())))
-    print("The most recent year of bith is: {}".format(
-        int(df['Birth Year'].max())))
-    print("the most occuring year of bith is: {}".format(
-        int(df['Birth Year'].mode()[0])))
+        print("Total counts of gender is: {}".format(
+            df['Gender'].value_counts().to_frame()))
 
-   else:
+        # TO DO: Display earliest, most recent, and most common year of birth
+
+        print("The earliest year of birth is: {}".format(
+            int(df['Birth Year'].min())))
+        print("The most recent year of bith is: {}".format(
+            int(df['Birth Year'].max())))
+        print("the most occuring year of bith is: {}".format(
+            int(df['Birth Year'].mode()[0])))
+
+    else:
         print("No gendery data for this city")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-    
+
+
 def display_data(df):
     """Displays raw data in chunks """
     # Prompt user whether the user wants to the raw data of the city to be displayed in chunks of five rows until no more
